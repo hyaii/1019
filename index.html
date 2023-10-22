@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        
+    *{ box-sizing: border-box; }
+    body{
+        margin: 0;
+        background: radial-gradient(circle at center, rgb(250, 151, 129), rgb(234, 210, 210));
+        width: 100vw;
+        height: 100vh;
+    }
+    .section{
+        width: 100%;
+        height: 100vh;
+        background: repeating-linear-gradient(
+            -135deg,
+            rgba(255,255,255,.03),
+            rgba(255,255,255,.03) 15px,
+            rgba(0,0,0,0) 1px,
+            rgba(0,0,0,0) 45px);
+    }
+    .contanier{
+        width: 100%;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+    }
+    .circle:before{
+        box-sizing: border-box;
+        content: "";
+        display: block;
+        position: absolute;
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        border: 20px solid rgb(242, 196, 186);
+        border-radius: 50%;
+        background: url(bonbon.gif);
+        background-size: cover;
+    }
+    .circle:after{
+        box-sizing: border-box;
+        content: "";
+        display: block;
+        position: absolute;
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-size: cover;
+        transform: scale(107%);
+        border: 2px solid rgb(238, 114, 87);
+    }
+    </style>
+</head>
+
+<body>
+
+    <section class="section">
+        <div class="contanier">
+            <div class="circle" style="translate: none; rotate: none; scale: none; transform: translate3d(127.315px, 0.6823px, 0px);"></div>
+        </div>
+    </section>
+
+    <script>
+        
+       gsap.to('.circle',{
+        duration: 1,
+        y: 2,
+        repeat: -1,
+        yoyo: true, 
+        ease: Power1.easeInOut 
+    });
+    gsap.to('.circle',{
+        duration: 31.7,
+        x: 200,
+        repeat: -1,
+        yoyo: true,
+        ease: Power1.easeInOut 
+    });
+    
+    </script>
+    
+</body>
+</html>
